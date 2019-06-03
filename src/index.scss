@@ -1,4 +1,13 @@
+@import "~bootstrap/scss/bootstrap";
+@import "styles/header";
+@import "styles/footer";
+@import "styles/loginForm";
+
 html, body {
     font-size: 16px;
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.alert__error {
+    max-width: 35rem;
 }

@@ -1,0 +1,14 @@
+.header__link {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+        color: #99b4fc;
+        text-decoration: none;
+    }
+}
+
+.dropdown-menu.show {
+    right: 0;
+    left: auto;
+}

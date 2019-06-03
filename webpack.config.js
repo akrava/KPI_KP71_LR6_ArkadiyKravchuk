@@ -28,8 +28,9 @@ module.exports = {
         alias: { 
             "@app":        relativePath("./src"),
             "@components": relativePath("./src/components"),
-            "@configs":    relativePath("./src/configs"),
-            "@route":      relativePath("./src/components/route")
+            "@routes":     relativePath("./src/components/routes"),
+            "@services":   relativePath("./src/components/services"),
+            "@configs":    relativePath("./src/configs")
         }
     },
     module: {
