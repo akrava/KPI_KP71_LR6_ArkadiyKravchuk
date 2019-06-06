@@ -4,31 +4,64 @@ import PropTypes from "prop-types";
 
 
 class ForecastCard extends React.Component {
+    getReadableDate(date) {
+        const options = { weekday: 'long', month: 'long', day: 'numeric' };
+        return new Date(date).toLocaleDateString("en", options);
+    }
+
+    getImgCondition(abbr) {
+        return `https://www.metaweather.com/static/img/weather/png/64/${abbr}.png`;
+    }
+
+    getTempFormat(temp, precision) {
+        return `${temp.toFixed(typeof precision === 'number' ? precision : 2)} °C`;
+    }
+
+    renderWindDirection(dir) {
+        return (<i className={`wind-direction wind-direction__${dir.toLowerCase()}`} />);
+    }
+
     render() {
+        const { 
+            getReadableDate, getImgCondition, getTempFormat, renderWindDirection
+        } = this;
+        const { 
+            date, abbr, condition, temp, max_temp, min_temp, humidity, air_pressure,
+            wind_compass, wind_speed, visibility
+        } = this.props;
         return (
             <Card>
                 <Card.Body>
-                    <Card.Title>{this.props.date}</Card.Title>
-                    <Card.Text>
-                        <img className="d-block mx-auto" src={`https://www.metaweather.com/static/img/weather/png/64/${this.props.abbr}.png`} />
-                        Condition: {this.props.condition}
+                    <Card.Title className="text-center">
+                        {getReadableDate(date)}
+                    </Card.Title>
+                    <Card.Text className="text-center">
+                        <img 
+                            className="d-block mx-auto" 
+                            src={getImgCondition(abbr)} 
+                        />
+                        {condition}
                     </Card.Text>
                     <Card.Text>
-                        Temp: {this.props.temp.toFixed(2)}
+                        <b>Temp:</b> {getTempFormat(temp)}
                     </Card.Text>
-                    <p className="muted">max temp: {this.props.max_temp.toFixed(2)}</p>
-                    <p className="muted">min temp: {this.props.min_temp.toFixed(2)}</p>
+                    <p className="text-muted">
+                        Max: {getTempFormat(max_temp, 0)}<br />
+                        Min: {getTempFormat(min_temp, 0)}
+                    </p>
                     <Card.Text>
-                        Humidity: {this.props.humidity}
-                    </Card.Text>
-                    <Card.Text>
-                        Air pressure: {this.props.air_pressure.toFixed(2)}
-                    </Card.Text>
-                    <Card.Text>
-                        Wind: {this.props.wind_compass} {this.props.wind_speed.toFixed(2)}
+                        <b>Humidity:</b> {humidity} %
                     </Card.Text>
                     <Card.Text>
-                        Visibility: {this.props.visibility.toFixed(2)}
+                        <b>Pressure:</b> {air_pressure.toFixed()} mb
+                    </Card.Text>
+                    <Card.Text>
+                        <b>Wind: </b> 
+                        {renderWindDirection(wind_compass)} 
+                        {wind_speed.toFixed(2)} mph 
+                    </Card.Text>
+                    <Card.Text>
+                        <b>Visibility:</b> {visibility.toFixed(2)} miles
                     </Card.Text>
                 </Card.Body>
           </Card>

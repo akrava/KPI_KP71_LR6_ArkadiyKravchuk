@@ -1,0 +1,70 @@
+// https://www.metaweather.com/static/css/common.css
+
+.wind-direction {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.3rem;
+    background: url('https://www.metaweather.com/static/img/windarrow.svg');
+    background-size: 100% 100%;
+}
+
+.wind-direction__nne {
+    transform: rotate(22.5deg);
+}
+
+.wind-direction__ne {
+    transform: rotate(45deg);
+}
+
+.wind-direction__ene {
+    transform: rotate(67.5deg);
+}
+
+.wind-direction__e {
+    transform: rotate(90deg);
+}
+
+.wind-direction__ese {
+    transform: rotate(112.5deg);
+}
+
+.wind-direction__se {
+    transform: rotate(135deg);
+}
+
+.wind-direction__sse {
+    transform: rotate(157.5deg);
+}
+
+.wind-direction__s {
+    transform: rotate(180deg);
+}
+
+.wind-direction__ssw {
+    transform: rotate(202.5deg);
+}
+
+.wind-direction__sw {
+    transform: rotate(225deg);
+}
+
+.wind-direction__wsw {
+    transform: rotate(247.5deg);
+}
+
+.wind-direction__w {
+    transform: rotate(270deg);
+}
+
+.wind-direction__wnw {
+    transform: rotate(292.5deg);
+}
+
+.wind-direction__nw {
+    transform: rotate(315deg);
+}
+
+.wind-direction__nnw {
+    transform: rotate(337.5deg);
+}

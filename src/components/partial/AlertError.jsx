@@ -4,17 +4,16 @@ import PropTypes from "prop-types";
 
 class AlertError extends React.Component {
     render() {
+        const { closedCb, heading, text } = this.props;
         return (
             <Alert 
                 className="mx-auto alert__error" 
-                onClose={this.props.closedCb} 
+                onClose={closedCb} 
                 dismissible 
                 variant="danger"
             >
-                <Alert.Heading>{this.props.heading}</Alert.Heading>
-                <p>
-                    {this.props.text}
-                </p>
+                <Alert.Heading>{heading}</Alert.Heading>
+                <p>{text}</p>
             </Alert>
         );
     }

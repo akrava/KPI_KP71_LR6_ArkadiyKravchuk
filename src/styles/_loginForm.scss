@@ -1,5 +1,11 @@
+$form-width: 35rem;
+
 .form-default {
-    max-width: 35rem;
+    max-width: $form-width;
     background-color: #c9d0f9;
     border-radius: 0.5rem;
+}
+
+.alert__error {
+    max-width: $form-width;
 }

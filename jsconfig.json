@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "outDir":           "./dist/",
+        "jsx":              "react",
+        "target":           "es6",
+        "lib":              [ "es6", "dom" ],
+        "module":           "commonjs",
+        "moduleResolution": "node",
+        "rootDir":           ".",
+        "baseUrl":           ".",
+        "paths": {
+            "@app/*":        [ "./src/*"            ],
+            "@components/*": [ "./src/components/*" ],
+            "@routes/*":     [ "./src/routes/*"     ],
+            "@services/*":   [ "./src/services/*"   ],
+            "@configs/*":    [ "./src/configs/*"    ]
+        }
+    },
+    "include": [ "**/*" ],
+    "exclude": ["./node_modules", "./dist"]
+}

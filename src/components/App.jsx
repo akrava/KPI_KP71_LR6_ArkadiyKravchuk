@@ -6,7 +6,6 @@ import Main from "@components/main/Main";
 import Footer from "@components/footer/Footer";
 import UserProvider from "@configs/UserProvider";
 
-
 export default class App extends React.Component {
     render() {
         return (
